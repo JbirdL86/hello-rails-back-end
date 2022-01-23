@@ -1,11 +1,7 @@
 class GreetingsController < ApplicationController
   def index
-    @greetings = Greeting.all
+    @greeting = Greeting.all.order('RANDOM()').first
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml {render :xml => @greetings[Math.floor(Math.random() * 8)]}
-      format.json {render :json => @greetings[Math.floor(Math.random() * 8)]}
-    end
+    render :json => @greeting
   end
 end
