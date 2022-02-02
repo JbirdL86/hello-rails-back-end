@@ -1,5 +1,7 @@
-Rails.application.routes.draw do
- resources :greetings
+# frozen_string_literal: true
 
- root 'greetings#index'
+Rails.application.routes.draw do
+  resources :greetings
+
+  root 'greetings#index'
 end
